@@ -12,5 +12,7 @@ out vec4 FragColor;
 
 void main() {
     // Color
-    FragColor = texture(image, model_uv);
+    vec4 color = texture(image, model_uv);
+    vec3 rounded = floor(color.rgb * 4.0) / 4.0;
+    FragColor = vec4(rounded,1);
 }
